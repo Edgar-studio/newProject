@@ -7,7 +7,7 @@ function App() {
     const token = localStorage.getItem('token');
 
   return (
-        <div className='text-red-500 bg-red-700'>
+        <div>
             {token &&  <Header />}
 
             <Pages />
