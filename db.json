@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "d1f1",
+      "username": "asvasc",
+      "email": "samvel1973@seznam.cz",
+      "password": "asd@#243AS"
+    },
+    {
+      "id": "c05c",
+      "username": "asvasc",
+      "email": "samvel1973@seznam.cz",
+      "password": "asd@sadf123"
+    },
+    {
+      "id": "a98b",
+      "username": "asvasc",
+      "email": "samvel1973@seznam.cz",
+      "password": "qsdc@#23fed"
+    },
+    {
+      "id": "647b",
+      "username": "asvasc",
+      "email": "samvel1973@seznam.cz",
+      "password": "asd@#34SD"
+    }
+  ]
+}
