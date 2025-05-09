@@ -11,7 +11,7 @@ const Login = ({ isLogin, toggleForm }) => {
         register,
         handleSubmit,
         formState: { errors, isValid }
-    } = useForm({ mode: 'onBlur' });
+    } = useForm({ mode: 'all' });
 
 
 

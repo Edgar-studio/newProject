@@ -10,7 +10,7 @@ const Register = ({ isLogin, toggleForm }) => {
         register,
         handleSubmit,
         formState: { errors, isValid }
-    } = useForm({ mode: 'onBlur' });
+    } = useForm({ mode: 'all' });
 
     return (
         <div className="relative w-full h-full z-0 signup">

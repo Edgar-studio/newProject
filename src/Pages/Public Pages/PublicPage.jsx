@@ -8,7 +8,7 @@ import Register from './Register';
 // <Login isLogin={isLogin} toggleForm={toggleForm} />
 
 const PublicPage = () => {
-    const [isLogin, setIsLogin] = useState(false);
+    const [isLogin, setIsLogin] = useState(true);
 
     const toggleForm = () => {
         setIsLogin(!isLogin); // parzapes shrjel
