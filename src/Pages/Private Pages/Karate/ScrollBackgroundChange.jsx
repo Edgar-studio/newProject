@@ -1,16 +1,14 @@
 import React, { useEffect, useCallback, useState } from 'react';
 
 const ScrollBackgroundChange = () => {
-    const [bgColor, setBgColor] = useState('rgb(255, 255, 255)');
+    const [bgColor, setBgColor] = useState('rgb(234, 145, 144)');
 
     const handleScroll = useCallback(() => {
-        const scrollTop = window.scrollY;
-        const docHeight = document.body.scrollHeight - window.innerHeight;
-        const scrollFraction = scrollTop / docHeight;
 
-        const red = Math.min(255, Math.floor(255 * scrollFraction));
-        const green = Math.min(255, Math.floor(200 * (1 - scrollFraction)));
-        const blue = 255;
+
+        const red = Math.random() * 255;
+        const green =  Math.random() * 255;
+        const blue =  Math.random() * 255;
 
         setBgColor(`rgb(${red}, ${green}, ${blue})`);
     }, []);

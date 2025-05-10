@@ -1,13 +1,13 @@
 import axios from "axios";
 import {notify} from "./Notify.jsx";
 
-const fetchUsers = async () => {
-    const response = await axios.get("http://localhost:4000/users");
-    return response.data;
-};
+
 
 const UseAuth = () => {
-
+    const fetchUsers = async () => {
+        const response = await axios.get("http://localhost:4000/users");
+        return response.data;
+    };
     const handleRegister = async ({ username, email, password }, e) => {
        e.preventDefault();
         const users =  await fetchUsers();
@@ -36,8 +36,20 @@ const UseAuth = () => {
             notify("Login failed", "red");
         }
     };
+    const handleAdminLogin = async (userInfo) => {
+        const AllUsers = await fetchUsers()
+        let User = AllUsers.find(user => user.password === userInfo.password);
+        if (User) {
+          localStorage.setItem("token", 'isAdmin');
+          window.location.reload();
+        }else {
 
-    return { handleLogin, handleRegister };
+            notify("Login failed", "red");
+        }
+    };
+
+
+    return { handleLogin, handleRegister, handleAdminLogin, fetchUsers };
 };
 
 export default UseAuth;
