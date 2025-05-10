@@ -1,5 +1,6 @@
 import React, {useMemo, useState} from 'react';
 import VideoPage from "./VideoPage.jsx";
+import ScrollBackgroundChange from "./ScrollBackgroundChange.jsx";
 
 const KTutorial = () => {
     const [number, setNumber] = useState(0);
@@ -39,6 +40,7 @@ const KTutorial = () => {
                 ))}
             </ul>
             <VideoPage />
+            <ScrollBackgroundChange />
         </div>
     );
 };
