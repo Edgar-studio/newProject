@@ -1,55 +1,76 @@
 import axios from "axios";
-import {notify} from "./Notify.jsx";
-
-
+import { notify } from "./Notify.jsx";
 
 const UseAuth = () => {
     const fetchUsers = async () => {
         const response = await axios.get("http://localhost:4000/users");
         return response.data;
     };
+
     const handleRegister = async ({ username, email, password }, e) => {
-       e.preventDefault();
-        const users =  await fetchUsers();
-        console.log(users)
+        e.preventDefault();
+        const users = await fetchUsers();
         try {
-        let newUser = {
-            username,
-            email,
-            password,
-        }
-                const response = await axios.post("http://localhost:4000/users", newUser);
-                return response.data;
+            let newUser = { username, email, password };
+            const response = await axios.post("http://localhost:4000/users", newUser);
+            return response.data;
         } catch (error) {
             console.error('Registration failed:', error);
         }
     };
 
     const handleLogin = async (userInfo) => {
-      const AllUsers = await fetchUsers()
-        let User = AllUsers.find(user => user.email === userInfo.email && user.password === userInfo.password);
-        if (User) {
-            localStorage.setItem("token", User.username);
+        const allUsers = await fetchUsers();
+        let user = allUsers.find(user => user.email === userInfo.email && user.password === userInfo.password);
+        if (user) {
+            localStorage.setItem("token", user.username);
             window.location.reload();
-        }else {
-            console.log("error")
+        } else {
             notify("Login failed", "red");
         }
     };
+
     const handleAdminLogin = async (userInfo) => {
-        const AllUsers = await fetchUsers()
-        let User = AllUsers.find(user => user.password === userInfo.password);
-        if (User) {
-          localStorage.setItem("token", 'isAdmin');
-          window.location.reload();
-        }else {
-
+        const allUsers = await fetchUsers();
+        let user = allUsers.find(user => user.password === userInfo.password);
+        if (user) {
+            localStorage.setItem("token", 'isAdmin');
+            window.location.reload();
+        } else {
             notify("Login failed", "red");
         }
     };
 
+    // ✅ Delete User
+    const deleteUser = async (userId) => {
+        try {
+            await axios.delete(`http://localhost:4000/users/${userId}`);
+            notify("User deleted", "green");
+        } catch (error) {
+            console.error("Failed to delete user:", error);
+            notify("Delete failed", "red");
+        }
+    };
 
-    return { handleLogin, handleRegister, handleAdminLogin, fetchUsers };
+    const editUser = async (userId, updatedData) => {
+        try {
+            const response = await axios.put(`http://localhost:4000/users/${userId}`, updatedData);
+            notify("User updated", "green");
+            return response.data;
+        } catch (error) {
+            console.error("Failed to update user:", error);
+            notify("Update failed", "red");
+        }
+    };
+
+    return {
+        handleLogin,
+        handleRegister,
+        handleAdminLogin,
+        fetchUsers,
+        deleteUser,
+        editUser
+    };
 };
 
 export default UseAuth;
