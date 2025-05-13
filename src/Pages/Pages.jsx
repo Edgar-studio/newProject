@@ -9,7 +9,7 @@ const Pages = () => {
     return (
         <div className={` w-full  ${token ? 'min-h-[80vh]' : 'min-h-screen'}`}>
 
-            {useRoutes(token !== 'isAdmin' ? privateRoutes : token === "isAdmin" ? adminRoutes : publicRoutes)}
+            {useRoutes(token !== 'isAdmin' && token ? privateRoutes : token === "isAdmin" ? adminRoutes : publicRoutes)}
         </div>
     );
 };

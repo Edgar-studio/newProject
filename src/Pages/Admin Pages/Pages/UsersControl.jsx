@@ -1,19 +1,39 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from "../../../Utils/useAuth.jsx";
+import AddUserModal from "../Components/AddUserModal.jsx";
+import {IoIosCloseCircle} from "react-icons/io";
 
 const UsersControl = () => {
-    const { fetchUsers, deleteUser, editUser } = useAuth();
+    const { fetchUsers, deleteUser, editUser, blockUser} = useAuth();
     const [users, setUsers] = useState([]);
     const [editingUserId, setEditingUserId] = useState(null);
-    const [editedUser, setEditedUser] = useState({ username: "", email: "" });
-
+    const [editedUser, setEditedUser] = useState({ username: "", email: "", password: "" });
+   const [modalIsActive, setModalIsActive] = useState(false);
     const getUsers = async () => {
         const users = await fetchUsers();
         setUsers(users);
     };
 
+    function scrollToTop(){
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        })
+    }
+
     useEffect(() => {
-        getUsers();
+        if (modalIsActive) {
+            // Հապաղում ենք մի փոքր՝ DOM թարմանալու համար
+            const timeout = setTimeout(() => {
+                scrollToTop();
+            }, 3000); // 100 միլիվայրկյան
+
+            return () => clearTimeout(timeout);
+        }
+    }, [modalIsActive]);
+
+    useEffect(() => {
+         getUsers();
     }, []);
 
     const handleInputChange = (e) => {
@@ -23,12 +43,13 @@ const UsersControl = () => {
     const handleEditSubmit = async (id) => {
         await editUser(id, editedUser);
         setEditingUserId(null);
-        getUsers();
+      await getUsers();
     };
 
     const handleEdit = (user) => {
         setEditingUserId(user.id);
-        setEditedUser({ username: user.username, email: user.email });
+        setEditedUser({ username: user.username, email: user.email, password: user.password });
+
     };
 
     const cancelEdit = () => {
@@ -37,11 +58,17 @@ const UsersControl = () => {
 
     const handleDelete = async (id) => {
         await deleteUser(id);
-        getUsers();
+        await getUsers();
     };
 
+    const handleBlock = async (id, currentBlockedStatus, userInfo) => {
+        await blockUser(id, !currentBlockedStatus, userInfo);
+        await getUsers();
+    };
     return (
-        <div className="p-6 max-w-4xl mx-auto">
+        !modalIsActive ? (
+        <div className="p-6 max-w-4xl mx-auto flex justify-between flex-col min-h-full gap-4 ">
+
             <h2 className="text-2xl font-bold mb-6">Users Control</h2>
             <div className="space-y-4">
                 {users.map(user => (
@@ -59,6 +86,13 @@ const UsersControl = () => {
                                     type="email"
                                     name="email"
                                     value={editedUser.email}
+                                    onChange={handleInputChange}
+                                    className="border px-2 py-1 rounded"
+                                />
+                                <input
+                                    type="text"
+                                    name="password"
+                                    value={editedUser.password}
                                     onChange={handleInputChange}
                                     className="border px-2 py-1 rounded"
                                 />
@@ -95,9 +129,19 @@ const UsersControl = () => {
                                     </button>
                                     <button
                                         onClick={() => handleDelete(user.id)}
-                                        className="bg-red-500 text-white px-3 py-1 rounded"
+                                        className={`bg-red-500 text-white px-3 py-1 rounded 
+                                        ${user.username === "Admin" ? 'hidden' : ''}`}
                                     >
                                         Delete
+                                    </button>
+                                    <button
+
+                                        onClick={() => handleBlock(user.id, user.isBlocked, user)}
+                                        className={`px-3 py-1 rounded text-white ${
+                                            user.isBlocked ? 'bg-green-500' : 'bg-orange-500'
+                                        } ${user.username === "Admin" ? 'hidden' : ''}`}
+                                    >
+                                        {user.isBlocked ? 'Unblock' : 'Block'}
                                     </button>
                                 </>
                             )}
@@ -105,7 +149,39 @@ const UsersControl = () => {
                     </div>
                 ))}
             </div>
+
+            <button
+                onClick={()=>{
+                    setModalIsActive(true)
+
+                }}
+            >
+                Add User
+            </button>
         </div>
+    ) : (
+             <div
+                className='w-full h-screen  fixed z-10 top-0 left-0 flex justify-center items-center'
+            >
+
+                 <div
+                     className='relative w-[70%] h-[60vh]'
+                 >
+                     <button
+                         className='absolute top-3 right-2 p-1 border-none'
+                         onClick={()=>setModalIsActive(false)}
+                     >
+                         <IoIosCloseCircle
+                         size={25}
+                         />
+                     </button>
+                     <AddUserModal/>
+                 </div>
+
+
+            </div>
+        )
+
     );
 };
 

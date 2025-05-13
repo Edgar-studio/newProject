@@ -1,28 +1,66 @@
 {
   "users": [
     {
-      "id": "d1f1",
       "username": "Admin",
       "email": "samvel1973@seznam.cz",
-      "password": "Admin123@"
+      "password": "Admin123@",
+      "id": "d1f1"
     },
     {
       "id": "c05c",
       "username": "Tom",
       "email": "samvel11973@seznam.cz",
-      "password": "asd@sadf123"
-    },
-    {
-      "id": "a98b",
-      "username": "Jon",
-      "email": "samvel13e4973@seznam.cz",
-      "password": "qsdc@#23fed"
+      "password": "asd@sadf12333",
+      "isBlocked": false
     },
     {
       "id": "647b",
       "username": "Cruze",
       "email": "samvel1921373@seznam.cz",
-      "password": "asd@#34SD"
+      "password": "asd@#34SD",
+      "isBlocked": false
+    },
+    {
+      "id": "c05c",
+      "username": "Tom",
+      "email": "samvel11973@seznam.cz",
+      "password": "asd@sadf12333",
+      "isBlocked": false
+    },
+    {
+      "id": "647b",
+      "username": "Cruze",
+      "email": "samvel1921373@seznam.cz",
+      "password": "asd@#34SD",
+      "isBlocked": false
+    },
+    {
+      "id": "c05c",
+      "username": "Tom",
+      "email": "samvel11973@seznam.cz",
+      "password": "asd@sadf12333",
+      "isBlocked": false
+    },
+    {
+      "id": "647b",
+      "username": "Cruze",
+      "email": "samvel1921373@seznam.cz",
+      "password": "asd@#34SD",
+      "isBlocked": false
+    },
+    {
+      "id": "c05c",
+      "username": "Tom",
+      "email": "samvel11973@seznam.cz",
+      "password": "asd@sadf12333",
+      "isBlocked": false
+    },
+    {
+      "id": "647b",
+      "username": "Cruze",
+      "email": "samvel1921373@seznam.cz",
+      "password": "asd@#34SD",
+      "isBlocked": false
     }
   ]
 }

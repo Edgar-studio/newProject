@@ -62,6 +62,24 @@ const UseAuth = () => {
             notify("Update failed", "red");
         }
     };
+    const blockUser = async (userId, isBlocked, userInfo) => {
+        const userData = {
+            id: userId,
+            username: userInfo.username,
+            email: userInfo.email,
+            password: userInfo.password,
+            isBlocked: isBlocked,
+
+        }
+        try {
+            const response = await axios.put(`http://localhost:4000/users/${userId}`, userData);
+            notify(isBlocked ? "User blocked" : "User unblocked", "green");
+            return response.data;
+        } catch (error) {
+            console.error("Failed to update user:", error);
+            notify("Block/unblock failed", "red");
+        }
+    };
 
     return {
         handleLogin,
@@ -69,7 +87,8 @@ const UseAuth = () => {
         handleAdminLogin,
         fetchUsers,
         deleteUser,
-        editUser
+        editUser,
+        blockUser
     };
 };
 

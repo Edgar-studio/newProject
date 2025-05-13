@@ -15,7 +15,7 @@ const AdminPage = () => {
     return (
         <div className="flex">
             <NavBar />
-            <div className="w-full h-[80vh] bg-amber-300">{ContentComponent}</div>
+            <div className="w-full min-h-[80vh] bg-amber-300">{ContentComponent}</div>
         </div>
     );
 };
