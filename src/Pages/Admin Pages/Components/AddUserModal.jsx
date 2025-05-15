@@ -1,12 +1,15 @@
 import React from 'react';
+import Input from "../../../Components/UI/Input.jsx";
 
 const AddUserModal = () => {
+
     return (
-        <div
+        <form
         className='w-full h-full bg-yellow-200'
         >
             Modal
-        </div>
+
+        </form>
     );
 };
 
