@@ -10,12 +10,19 @@ const UseAuth = () => {
     const handleRegister = async ({ username, email, password }, e) => {
         e.preventDefault();
         const users = await fetchUsers();
+        const user = users.find(u => u.email === email || u.username === username);
+        if (user) {
+            notify('User already registered', 'red');
+        }else {
         try {
             let newUser = { username, email, password };
             const response = await axios.post("http://localhost:4000/users", newUser);
+            notify("Register ok", 'green')
             return response.data;
         } catch (error) {
+            notify("Register error", 'red')
             console.error('Registration failed:', error);
+        }
         }
     };
 
