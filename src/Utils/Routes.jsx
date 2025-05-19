@@ -10,6 +10,7 @@ import AdminPage from "../Pages/Admin Pages/AdminPage.jsx";
 import UsersControl from "../Pages/Admin Pages/Pages/UsersControl.jsx";
 import KarateControl from "../Pages/Admin Pages/Pages/KarateControl.jsx";
 import AdminHomePage from "../Pages/Admin Pages/Pages/Admin Home Page.jsx";
+import TutorInfo from "../Pages/Private Pages/Karate/TutorInfo.jsx";
 
 export const PUBLIC_PAGE = '/publicPage';
 export const HOME_PAGE = '/';
@@ -22,6 +23,9 @@ export const ADMIN_PAGE = '/admin/:page';
 export const USERS_CONTROL_PAGE = '/usersControl';
 export const KARATE_CONTROL_PAGE = '/karateControl';
 export const ADMIN_HOME_PAGE = '/adminHomePage';
+export const TUTORINFO = '/ktutorial/:id'
+
+
 export const publicRoutes = [
     { path: PUBLIC_PAGE, element: <PublicPage />, name: 'PublicPage' },
     { path: '*', element: <Navigate to={PUBLIC_PAGE} /> },
@@ -34,6 +38,7 @@ export const privateRoutes = [
     { path: CONTACT_PAGE, element: <Contact />, name: 'Contact' },
     { path: PRIVACY_POLICY_PAGE, element: <PrivacyPolicy />, name: 'Privacy Policy' },
     { path: TERMS_OF_SERVICE_PAGE, element: <TermsOfService />, name: 'Terms of Service' },
+    {path: TUTORINFO, element: <TutorInfo />, name: 'Tutorial Information' },
     { path: '*', element: <Navigate to={HOME_PAGE} /> },
 ];
 
