@@ -54,7 +54,7 @@ const UseAuth = () => {
             await axios.delete(`http://localhost:4000/users/${userId}`);
             notify("User deleted", "green");
         } catch (error) {
-            console.error("Failed to delete user:", error);
+            console.error("Failed to delete user:", error.response?.data || error.message);
             notify("Delete failed", "red");
         }
     };
@@ -65,10 +65,11 @@ const UseAuth = () => {
             notify("User updated", "green");
             return response.data;
         } catch (error) {
-            console.error("Failed to update user:", error);
+            console.error("Failed to update user:", error.response?.data || error.message);
             notify("Update failed", "red");
         }
     };
+
     const blockUser = async (userId, isBlocked, userInfo) => {
         const userData = {
             id: userId,

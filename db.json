@@ -23,34 +23,46 @@
   ],
   "KarateTutorial": [
     {
-      "id": "67a2",
-      "title": "Tutor1",
-      "description": "sdvgvgsdv",
-      "body": "IHHBJKvhjbklnk.;mhvjcgvfgbhl;oiluvflhi;kbg\nsdvsdv\nsdvsd\nvsdv\nsdv\nsdvsdvsdvbgdb"
+      "title": "Punch Basics",
+      "description": "Learn basic punching techniques",
+      "body": "Detailed steps for punching...",
+      "id": "1"
     },
     {
-      "id": "7433",
-      "title": "Tutor112",
-      "description": "sdvgvgsdvwdsfcvsa",
-      "body": "IHHBJKvhjbklnk.;mhvjcgvfgbhl;oiluvflhi;kbg\nsdvsdv\nsdvsdasdv\nvsdv\nsdv\nsdvsdvsdvbgdb"
+      "id": "2",
+      "title": "Kick Techniques",
+      "description": "Master intermediate kicks",
+      "body": "Detailed steps for kicking..."
     },
     {
-      "id": "3381",
-      "title": "Tutor11211",
-      "description": "sdvgvgsdvwdsfcvsa",
-      "body": "IHHBJKvhjbklnk.;mhvjcgvfgbhl;oiluvflhi;kbg\nsdvsdv\nsdvsdasdv\nvsdv\nsdv\nsdvsdvsdvbgdb"
+      "id": "3",
+      "title": "Kata Fundamentals",
+      "description": "Introduction to basic kata patterns",
+      "body": "Step-by-step instructions for beginner kata sequences including breathing techniques and proper stances."
     },
     {
-      "id": "e41a",
-      "title": "Tutor11211qefeew",
-      "description": "sdvgvgsdvwdsfcvsa",
-      "body": "IHHBJKvhjbklnk.;mhvjcgvfgbhl;oiluvflhi;kbg\nsdvsdv\nsdvsdasdv\nvsdv\nsdv\nsdvsdvsdvbgdb"
+      "id": "4",
+      "title": "Blocking Techniques",
+      "description": "Essential defensive blocks for self-protection",
+      "body": "Comprehensive guide to high, middle, and low blocks with applications for real-world self-defense scenarios."
     },
     {
-      "id": "ff14",
-      "title": "Tutor11211qefeew",
-      "description": "sdvgvgsdvwdsfcvsasdvsdv",
-      "body": "IHHBJKvhjbklnk.;mhvjcgvfgbhl;oiluvflhi;kbg\nsdvsdv\nsdvsdasdv\nvsdv\nsdv\nsdvsdvsdvbgdb"
+      "id": "5",
+      "title": "Stances and Footwork",
+      "description": "Foundation of movement in karate",
+      "body": "Detailed breakdown of front stance, back stance, horse stance, and cat stance with proper weight distribution and alignment principles."
+    },
+    {
+      "id": "6",
+      "title": "Sparring Strategies",
+      "description": "Tactical approaches for kumite practice",
+      "body": "Advanced concepts for point sparring, including distance management, timing, counterattacking, and competition tactics."
+    },
+    {
+      "id": "7",
+      "title": "Belt Examination Preparation",
+      "description": "Requirements and training plan for belt advancement",
+      "body": "Systematic training program covering technical requirements, physical conditioning, and mental preparation for successful belt examinations."
     }
   ]
 }
