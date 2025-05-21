@@ -60,7 +60,7 @@ const KarateControl = () => {
 
     return (
         !modalIsOpen ? (
-            <div className="p-6 max-w-4xl mx-auto flex flex-col min-h-full gap-4">
+            <div className="p-6 w-full mx-auto flex flex-col min-h-full gap-4 bg-gradient bg-gradient-to-bl from-blue-600 via-white-500 to-black-500">
                 <h2 className="text-2xl font-bold mb-6">Karate Control</h2>
 
                 <div className="space-y-4">
