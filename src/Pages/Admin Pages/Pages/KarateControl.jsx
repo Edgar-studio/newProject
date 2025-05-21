@@ -102,8 +102,10 @@ const KarateControl = () => {
                 </button>
             </div>
         ) : (
-            <div className="w-full h-screen fixed z-10 top-0 left-0 flex justify-center items-center bg-white">
-                <div className="relative w-[70%] h-[60vh] bg-white shadow rounded p-4">
+            <div className="w-full min-h-full fixed z-10 top-0 left-0 flex justify-center items-center
+            bg-gradient-to-r from-purple-600 via-pink-500 to-red-500">
+                <div className="relative w-[70%] h-[65vh]
+                 bg-gradient-to-r from-pink-600 via-red-500 to-purple-500 shadow rounded p-4">
                     <button
                         className="absolute top-3 right-3 p-1 border-none"
                         onClick={() => {

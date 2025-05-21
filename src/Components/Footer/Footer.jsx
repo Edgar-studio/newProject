@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="w-full bg-red-600 text-white px-6 py-4">
+        <footer className="w-full bg-red-600 text-white px-6 py-1  h-[15vh]">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                 <div>
                     <h2 className="text-lg font-semibold mb-2">Contact Us</h2>
@@ -14,7 +14,7 @@ const Footer = () => {
                 <div>
                     <h2 className="text-lg font-semibold mb-2">Quick Links</h2>
                     <ul className="space-y-1">
-                        <li><a href="/about" className="hover:underline">About Us</a></li>
+                        {/*<li><a href="/about" className="hover:underline">About Us</a></li>*/}
                         <li><a href="/contact" className="hover:underline">Contact</a></li>
                         <li><a href="/privacyPolicy" className="hover:underline">Privacy Policy</a></li>
                         <li><a href="/termsOfService" className="hover:underline">Terms of Service</a></li>
@@ -23,18 +23,19 @@ const Footer = () => {
 
                 <div>
                     <h2 className="text-lg font-semibold mb-2">Stay Connected</h2>
-                    <p>Follow us on social media for updates and behind-the-scenes content:</p>
+                    {/*<p>Follow us on social media for updates and behind-the-scenes content:</p>*/}
                     <div className="flex space-x-4 mt-2">
                         <a href="#" className="hover:underline">Facebook</a>
                         <a href="#" className="hover:underline">Instagram</a>
                         <a href="#" className="hover:underline">Twitter</a>
                     </div>
+                    <div className="mt-2 text-center text-xs text-gray-200">
+                        &copy; {new Date().getFullYear()} Karate. All rights reserved.
+                    </div>
                 </div>
             </div>
 
-            <div className="mt-6 text-center text-xs text-gray-200">
-                &copy; {new Date().getFullYear()} Karate. All rights reserved.
-            </div>
+
         </footer>
     );
 };

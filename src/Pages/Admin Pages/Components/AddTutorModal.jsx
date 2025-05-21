@@ -27,7 +27,8 @@ const AddTutorModal = ({ initialData, onSave, onClose }) => {
     };
 
     return (
-        <div onSubmit={handleSubmit} className="p-8 space-y-6 bg-gradient-to-r from-purple-600 via-pink-500 to-red-500">
+        <div onSubmit={handleSubmit} className=" p-8 space-y-6
+        ">
             <h2 className="text-3xl font-extrabold text-center text-gray-800">
                 {initialData ? "Edit Tutorial" : "Add New Tutorial"}
             </h2>

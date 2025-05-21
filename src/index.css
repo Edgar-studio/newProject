@@ -1,7 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 button {
     cursor: pointer;
     border: 1px solid black;
@@ -12,7 +16,16 @@ input{
     border: 1px solid black;
 }
 
+
 h1{
     font-size: 40px;
+}
 
+.dark  p{
+    color: white;
+}
+
+
+.dark  h1{
+    color: white;
 }

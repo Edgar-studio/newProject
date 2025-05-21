@@ -5,12 +5,15 @@ import App from './App.jsx'
 import {BrowserRouter} from "react-router-dom";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import {ToastContainer} from "react-toastify";
+import {ThemeProvider} from "./Utils/ThemeContext.jsx";
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-      <BrowserRouter>
-          <App />
-          <ToastContainer />
-      </BrowserRouter>
-  </StrictMode>,
+    <ThemeProvider>
+      <StrictMode>
+          <BrowserRouter>
+              <App />
+              <ToastContainer />
+          </BrowserRouter>
+      </StrictMode>
+    </ThemeProvider>,
 )

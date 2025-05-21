@@ -20,11 +20,13 @@ const TutorInfo = () => {
     }, []);
 
     return (
-        <div>
-            <h1 className='text-2xl '>{tutorial.title}</h1>
+        <div
+        className='w-full h-screen dark:bg-gray-500 flex flex-col items-center justify-center p-6 dark:bg-text-white'
+        >
+            <h1 className='text-4xl'>{tutorial.title}</h1>
 
-            <p>{tutorial.description}</p>
-            <p>{tutorial.body}</p>
+            <p className="text-2xl">{tutorial.description}</p>
+            <p className="text-2xl ">{tutorial.body}</p>
         </div>
     );
 };

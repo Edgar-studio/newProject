@@ -1,19 +1,44 @@
 import React, {useState} from 'react';
 import Menu from "./Menu.jsx";
 import Admin_Modal from "./Admin_Modal.jsx";
+import {useTheme} from "../../Utils/ThemeContext.jsx";
+import {IoMoon, IoSunny} from "react-icons/io5";
 
 const Header = () => {
+    const {theme, toggleTheme} = useTheme();
 
+    const token = localStorage.getItem("token");
     function handleLogout() {
         localStorage.removeItem('token');
         window.location.reload();
     }
 
     return (
-        <div className="h-[10vh] w-full bg-gray-800 text-white flex items-center
-         justify-between px-6 shadow-md">
-           <Menu />
+        <header className={`h-[10vh] w-full bg-gray-300 text-white flex items-center dark:bg-gray-600
+             px-6 shadow-md ${token === 'isAdmin' ? 'justify-center' : 'justify-between' }  `}>
+            { token !=='isAdmin' && <Menu />}
             <div className="flex space-x-4">
+
+
+                <div
+                    onClick={toggleTheme}
+                    className="w-20 h-10 flex items-center justify-between bg-gray-200 dark:bg-gray-700 rounded-full p-1 cursor-pointer transition-colors duration-300"
+                >
+                    <div
+                        className={`w-8 h-8 flex items-center justify-center rounded-full transition-all duration-500
+        ${theme === "dark" ? "translate-x-10 bg-yellow-400" : "translate-x-0 bg-gray-500"}`}
+                        style={{ transform: theme === 'dark' ? 'translateX(40px)' : 'translateX(0)' }}
+                    >
+                        {theme === "dark" ? (
+                            <IoSunny className="text-white text-xl" />
+                        ) : (
+                            <IoMoon className="text-white text-xl" />
+                        )}
+                    </div>
+                </div>
+
+
+
                 <Admin_Modal />
                 <button
                     onClick={handleLogout}
@@ -26,7 +51,7 @@ const Header = () => {
 
 
             </div>
-        </div>
+        </header>
     );
 };
 

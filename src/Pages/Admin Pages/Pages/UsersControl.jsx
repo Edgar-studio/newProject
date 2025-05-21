@@ -67,7 +67,8 @@ const UsersControl = () => {
     };
     return (
         !modalIsActive ? (
-        <div className="p-6 w-full h-screen mx-auto flex justify-between flex-col gap-4 bg-gradient bg-gradient-to-bl from-blue-600 via-white-500 to-black-500 ">
+        <div className="p-6 w-full min-h-full
+        mx-auto flex justify-between flex-col gap-4 bg-gradient bg-gradient-to-bl from-blue-600 via-white-500 to-black-500 ">
 
             <h2 className="text-2xl font-bold mb-6">Users Control</h2>
             <div className="space-y-4">
