@@ -27,7 +27,7 @@ const AddTutorModal = ({ initialData, onSave, onClose }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="p-8 space-y-6">
+        <div onSubmit={handleSubmit} className="p-8 space-y-6 bg-gradient-to-r from-purple-600 via-pink-500 to-red-500">
             <h2 className="text-3xl font-extrabold text-center text-gray-800">
                 {initialData ? "Edit Tutorial" : "Add New Tutorial"}
             </h2>
@@ -61,11 +61,11 @@ const AddTutorModal = ({ initialData, onSave, onClose }) => {
 
             <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 text-white font-semibold py-3 rounded-md shadow-md hover:brightness-110 transition"
+                className="w-full bg-gradient-to-r from-blue-600 via-white-500 to-black-500 text-white font-semibold py-3 rounded-md shadow-md hover:brightness-110 transition"
             >
                 {initialData ? "Update Tutorial" : "Add Tutorial"}
             </button>
-        </form>
+        </div>
     );
 };
 
