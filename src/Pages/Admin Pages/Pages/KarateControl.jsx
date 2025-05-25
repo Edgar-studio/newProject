@@ -9,7 +9,6 @@ const KarateControl = () => {
     const [tutorialToEdit, setTutorialToEdit] = useState(null);
     const { fetchTutorials, addTutorial, editTutorial, deleteTutorial } = useTutorials();
 
-    // Fetch tutorials
     useEffect(() => {
         const loadTutorials = async () => {
             const data = await fetchTutorials();
@@ -33,7 +32,7 @@ const KarateControl = () => {
             await deleteTutorial(id);
             setTutorials(tutorials.filter((t) => t.id !== id));
         } catch (error) {
-            // Error handling could be added here
+            // Add error handling if needed
         }
     };
 
@@ -60,29 +59,29 @@ const KarateControl = () => {
 
     return (
         !modalIsOpen ? (
-            <div className="p-6 w-full mx-auto flex flex-col min-h-full gap-4 bg-gradient bg-gradient-to-bl from-blue-600 via-white-500 to-black-500">
-                <h2 className="text-2xl font-bold mb-6">Karate Control</h2>
+            <div className="p-6 w-full mx-auto flex flex-col min-h-full gap-4 bg-gradient-to-bl from-blue-600 via-white to-black dark:from-blue-900 dark:via-gray-900 dark:to-black">
+                <h2 className="text-2xl font-bold mb-6 text-black dark:text-white">Karate Control</h2>
 
                 <div className="space-y-4">
                     {tutorials.map((tutorial) => (
                         <div
                             key={tutorial.id}
-                            className="p-4 bg-white shadow rounded flex justify-between items-center"
+                            className="p-4 bg-white dark:bg-gray-800 shadow rounded flex justify-between items-center text-black dark:text-white"
                         >
                             <div>
                                 <p className="font-medium">🥋 {tutorial.title}</p>
-                                <p className="text-sm text-gray-600">{tutorial.description}</p>
+                                <p className="text-sm text-gray-600 dark:text-gray-300">{tutorial.description}</p>
                             </div>
                             <div className="flex gap-2">
                                 <button
                                     onClick={() => handleEdit(tutorial)}
-                                    className="bg-blue-500 text-white px-3 py-1 rounded"
+                                    className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded"
                                 >
                                     Edit
                                 </button>
                                 <button
                                     onClick={() => handleDelete(tutorial.id)}
-                                    className="bg-red-500 text-white px-3 py-1 rounded"
+                                    className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
                                 >
                                     Delete
                                 </button>
@@ -96,18 +95,16 @@ const KarateControl = () => {
                         setTutorialToEdit(null);
                         setModalIsOpen(true);
                     }}
-                    className="mt-6 bg-green-500 text-white px-4 py-2 rounded"
+                    className="mt-6 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded"
                 >
                     Add Tutorial
                 </button>
             </div>
         ) : (
-            <div className="w-full min-h-full fixed z-10 top-0 left-0 flex justify-center items-center
-            bg-gradient-to-r from-purple-600 via-pink-500 to-red-500">
-                <div className="relative w-[70%] h-[65vh]
-                 bg-gradient-to-r from-pink-600 via-red-500 to-purple-500 shadow rounded p-4">
+            <div className="w-full min-h-full fixed z-10 top-0 left-0 flex justify-center items-center bg-black bg-opacity-70">
+                <div className="relative w-[70%] h-[65vh] bg-white dark:bg-gray-800 shadow rounded p-4">
                     <button
-                        className="absolute top-3 right-3 p-1 border-none"
+                        className="absolute top-3 right-3 p-1 text-gray-600 dark:text-gray-300"
                         onClick={() => {
                             setModalIsOpen(false);
                             setTutorialToEdit(null);

@@ -19,8 +19,8 @@ const Home = () => {
                             </p>
                         </div>
 
-                        <div className="bg-green-50 p-4 rounded-md border border-green-100">
-                            <h2 className="text-xl font-semibold text-green-700 mb-2">Resources</h2>
+                        <div className=" bg-blue-50 p-4 rounded-md border border-blue-100 dark:bg-gray-800">
+                            <h2 className="text-xl font-semibold text-blue-700 mb-2">Resources</h2>
                             <p className="text-gray-600">
                                 Check out our documentation and guides to help you make the most of your experience.
                             </p>
