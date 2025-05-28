@@ -21,7 +21,8 @@ const TutorInfo = () => {
 
     return (
         <div
-        className='w-full h-screen dark:bg-gray-500 flex flex-col items-center justify-center p-6 dark:bg-text-white'
+        className='w-full h-screen dark:bg-gray-500 flex flex-col items-center
+        justify-center p-6 dark:bg-text-white'
         >
             <h1 className='text-4xl'>{tutorial.title}</h1>
 

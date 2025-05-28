@@ -11,9 +11,12 @@ const Menu = () => {
             <ul className="flex items-center gap-5 list-none">
                 {/* Logo */}
                 <li>
-                    <NavLink to="/"
-                             className="text-white text-4xl p-2 transition-opacity duration-300
-                    hover:opacity-50">
+                    <NavLink
+                        to="/"
+                        className="relative text-white text-lg px-2 py-1 no-underline transition-colors duration-600
+                after:content-[''] after:absolute after:w-full after:h-[2px] after:bottom-0
+                after:left-0 after:rounded after:transition-transform after:duration-600
+                hover:after:scale-x-100">
                         <i className="fa-brands fa-pied-piper-alt"></i>
                     </NavLink>
                 </li>

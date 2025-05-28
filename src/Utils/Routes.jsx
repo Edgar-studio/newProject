@@ -33,7 +33,7 @@ export const publicRoutes = [
 ];
 
 export const privateRoutes = [
-    { path: HOME_PAGE, element: <Home />, name: 'Home', menu: true },
+    { path: HOME_PAGE, element: <Home />, name: 'Home' },
     { path: ABOUT_PAGE, element: <About />, name: 'About', menu: true },
     { path: KTUTORIAL_PAGE, element: <KTutorial />, name: 'Karate Tutorial', menu: true },
     { path: CONTACT_PAGE, element: <Contact />, name: 'Contact' },

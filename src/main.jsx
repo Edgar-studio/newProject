@@ -9,6 +9,7 @@ import {ToastContainer} from "react-toastify";
 import {ThemeProvider} from "./Utils/ThemeContext.jsx";
 
 createRoot(document.getElementById('root')).render(
+
     <ThemeProvider>
       <StrictMode>
           <BrowserRouter>

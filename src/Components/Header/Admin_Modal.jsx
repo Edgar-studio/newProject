@@ -17,7 +17,7 @@ const AdminModal = () => {
     return (
         <div>
             {token === "isAdmin" && <button
-                className='p-2 bg-gray-400 text-white font-bold text-xl'
+                className='p-2 text-[18px] font-bold border-0 text-white '
 
                 onClick={()=>{
                     localStorage.setItem("token", 'Admin');
@@ -27,44 +27,62 @@ const AdminModal = () => {
              Exit From Admin
             </button>}
 
-            {token === "Admin" && <button
-                className='p-2 bg-gray-400 text-white font-bold text-xl'
+            {token === "Admin" && !isOpen ? <button
+                className='text-white border-0 '
 
                 onClick={()=>{
                     setIsOpen(!isOpen);
                 }}
             >
                 Admin Page
-            </button>}
+            </button> :  token !== "isAdmin" && <form
+                onSubmit={handleSubmit(handleAdminLogin)}
+                // className='bg-cyan-600 text-black text-2xl
+                //      w-1/3 h-1/3 flex items-center justify-center flex-col gap-4'
+            >
 
-            {
-                isOpen &&  <div
-                    className='absolute top-0 left-0 w-full h-screen flex justify-center items-center'
-                >
-                    <form
-                        onSubmit={handleSubmit(handleAdminLogin)}
-                        className='bg-cyan-600 text-black text-2xl
-                     w-1/3 h-1/3 flex items-center justify-center flex-col gap-4' >
-                         <span>
-                        Enter Your Password
-                         </span>
-                        <Input
-                            type="password"
-                            name='password'
-                            placeholder="Password"
-                            register={register}
-                            validation={passwordValidation}
-                            error={errors.password && errors.password.message}
-                        />
-                        <button
-                        type={'submit'}
-                        >
-                            Submit
-                        </button>
-                    </form>
+                <Input
 
-                </div>
+                    type="password"
+                    name='password'
+                    placeholder="Password"
+                    register={register}
+                    validation={passwordValidation}
+                    error={errors.password && errors.password.message}
+                    className = "bg-blue-400 w-full p-2  h-full rounded-lg"
+                />
+
+            </form>
             }
+
+            {/*{*/}
+            {/*    isOpen &&  <div*/}
+            {/*        className='absolute top-0 left-0 w-full h-screen flex justify-center items-center'*/}
+            {/*    >*/}
+            {/*        <form*/}
+            {/*            onSubmit={handleSubmit(handleAdminLogin)}*/}
+            {/*            className='bg-cyan-600 text-black text-2xl*/}
+            {/*         w-1/3 h-1/3 flex items-center justify-center flex-col gap-4' >*/}
+            {/*             <span>*/}
+            {/*            Enter Your Password*/}
+            {/*             </span>*/}
+            {/*            <Input*/}
+            {/*                type="password"*/}
+            {/*                name='password'*/}
+            {/*                placeholder="Password"*/}
+            {/*                register={register}*/}
+            {/*                validation={passwordValidation}*/}
+            {/*                error={errors.password && errors.password.message}*/}
+            {/*            />*/}
+            {/*            <button*/}
+            {/*            type={'submit'}*/}
+            {/*            >*/}
+            {/*                Submit*/}
+            {/*            </button>*/}
+            {/*        </form>*/}
+
+            {/*    </div>*/}
+            {/*}*/}
 
         </div>
     );
