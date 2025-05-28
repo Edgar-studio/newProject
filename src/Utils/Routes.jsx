@@ -11,6 +11,7 @@ import UsersControl from "../Pages/Admin Pages/Pages/UsersControl.jsx";
 import KarateControl from "../Pages/Admin Pages/Pages/KarateControl.jsx";
 import AdminHomePage from "../Pages/Admin Pages/Pages/Admin Home Page.jsx";
 import TutorInfo from "../Pages/Private Pages/Karate/TutorInfo.jsx";
+import Languages from "../Pages/Private Pages/Information/Languages.jsx";
 
 export const PUBLIC_PAGE = '/publicPage';
 export const HOME_PAGE = '/';
@@ -24,7 +25,7 @@ export const USERS_CONTROL_PAGE = '/usersControl';
 export const KARATE_CONTROL_PAGE = '/karateControl';
 export const ADMIN_HOME_PAGE = '/adminHomePage';
 export const TUTORINFO = '/ktutorial/:id'
-
+export const LANGUAGES_PAGE = '/languages';
 
 export const publicRoutes = [
     { path: PUBLIC_PAGE, element: <PublicPage />, name: 'PublicPage' },
@@ -39,6 +40,7 @@ export const privateRoutes = [
     { path: PRIVACY_POLICY_PAGE, element: <PrivacyPolicy />, name: 'Privacy Policy' },
     { path: TERMS_OF_SERVICE_PAGE, element: <TermsOfService />, name: 'Terms of Service' },
     {path: TUTORINFO, element: <TutorInfo />, name: 'Tutorial Information' },
+    {path: LANGUAGES_PAGE, element: <Languages />, name: 'Languages', menu: true },
     { path: '*', element: <Navigate to={HOME_PAGE} /> },
 ];
 

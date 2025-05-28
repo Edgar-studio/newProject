@@ -3,6 +3,7 @@ import Menu from "./Menu.jsx";
 import Admin_Modal from "./Admin_Modal.jsx";
 import {useTheme} from "../../Utils/ThemeContext.jsx";
 import {IoMoon, IoSunny} from "react-icons/io5";
+import i18n from "../../../i18n.js";
 
 const Header = () => {
     const {theme, toggleTheme} = useTheme();
@@ -12,9 +13,11 @@ const Header = () => {
         localStorage.removeItem('token');
         window.location.reload();
     }
-
+    const changeLanguage = (lang) => {
+        i18n.changeLanguage(lang);
+    }
     return (
-        <header className={`h-[10vh] w-full bg-gray-300 text-white flex items-center dark:bg-gray-600
+        <header className={`h-[10vh] w-full bg-gray-500 text-white flex items-center dark:bg-black
              px-6 shadow-md ${token === 'isAdmin' ? 'justify-center' : 'justify-between' }  `}>
             { token !=='isAdmin' && <Menu />}
             <div className="flex space-x-4">
@@ -36,6 +39,21 @@ const Header = () => {
                         )}
                     </div>
                 </div>
+                <button
+                    onClick={()=>{
+                        changeLanguage('hy')
+                    }}
+                >Arm</button>
+                <button
+                    onClick={()=>{
+                        changeLanguage('en')
+                    }}
+                >Eng</button>
+                <button
+                    onClick={()=>{
+                        changeLanguage('cz')
+                    }}
+                >Cze</button>
 
 
 
