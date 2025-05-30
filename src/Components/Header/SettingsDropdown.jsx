@@ -19,7 +19,7 @@ const SettingsDropdown = () => {
         window.location.reload();
     }
     return (
-        <div className="relative inline-block text-left">
+        <div className="z-50 relative inline-block text-left">
             <IoSettingsSharp
                 onClick={() => setIsOpen(!isOpen)}
                 className='text-4xl m-2 cursor-pointer hover:text-blue-300'

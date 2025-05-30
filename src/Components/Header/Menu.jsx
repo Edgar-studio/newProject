@@ -1,9 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { privateRoutes } from '../../Utils/Routes.jsx';
+import {useTranslation} from "react-i18next";
 
 const Menu = () => {
-
+    const {t} = useTranslation();
     const menuItems = privateRoutes.filter(route => route.name && route.menu === true);
 
     return (
@@ -34,7 +35,7 @@ const Menu = () => {
                 hover:after:scale-x-100`
                             }
                         >
-                            {menuElement.name}
+                            {t(menuElement.name)}
                         </NavLink>
                     </li>
                 ))}

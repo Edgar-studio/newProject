@@ -38,7 +38,7 @@ i18next
     .use(I18NextHttpBackend)
     .init({
         fallbackLng: "hy",
-        debug: true,
+        debug: false,
         backend: {
             loadPath: '/locales/{{lng}}/translation.json',
         },

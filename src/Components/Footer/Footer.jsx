@@ -16,9 +16,9 @@ const Footer = () => {
                 <div>
                     <h2 className="text-lg font-semibold mb-2">{t("quick_links")}</h2>
                     <ul className="space-y-1">
-                        <li><a href="/contact" className="hover:underline">Contact</a></li>
-                        <li><a href="/privacyPolicy" className="hover:underline">Privacy Policy</a></li>
-                        <li><a href="/termsOfService" className="hover:underline">Terms of Service</a></li>
+                        <li><a href="/contact" className="hover:underline">{t("Contact")}</a></li>
+                        <li><a href="/privacyPolicy" className="hover:underline">{t("privacy_policy")}</a></li>
+                        <li><a href="/termsOfService" className="hover:underline">{t("termsOfService")}</a></li>
                     </ul>
                 </div>
 
