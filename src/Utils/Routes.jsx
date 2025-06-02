@@ -12,6 +12,7 @@ import KarateControl from "../Pages/Admin Pages/Pages/KarateControl.jsx";
 import AdminHomePage from "../Pages/Admin Pages/Pages/Admin Home Page.jsx";
 import TutorInfo from "../Pages/Private Pages/Karate/TutorInfo.jsx";
 import Languages from "../Pages/Private Pages/Information/Languages.jsx";
+import Comments from "../Pages/Private Pages/Information/Comments.jsx"
 
 
 
@@ -30,6 +31,7 @@ export const KARATE_CONTROL_PAGE = '/karateControl';
 export const ADMIN_HOME_PAGE = '/adminHomePage';
 export const TUTORINFO = '/ktutorial/:id'
 export const LANGUAGES_PAGE = '/languages';
+export const COMMENTS_PAGE = '/comments';
 
 
 export const publicRoutes = [
@@ -47,6 +49,7 @@ export const privateRoutes = [
     { path: TERMS_OF_SERVICE_PAGE, element: <TermsOfService />, name: 'Terms of Service' },
     {path: TUTORINFO, element: <TutorInfo />, name: 'Tutorial Information' },
     {path: LANGUAGES_PAGE, element: <Languages />, name: 'Languages', menu: false    },
+    { path: COMMENTS_PAGE, element: <Comments />, name: 'Comments', menu: false    },
     { path: '*', element: <Navigate to={HOME_PAGE} /> },
 ];
 

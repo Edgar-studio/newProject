@@ -69,12 +69,31 @@
       "description": "sdfsdfsdfwesdgvfsd",
       "body": "Detailed steps for kicking...Step-by-step instructions for beginner kata sequences including breathing techniques and proper stancesStep-by-step instructions for beginner kata sequences including breathing techniques and proper stancesStep-by-step instructions for beginner kata sequences including breathing techniques and proper stances"
     }
-  ],
-    "Comments": [
+  ],"Comments": [
+  {
+    "id": "c1",
+    "username": "Darlene Peterson",
+    "title": "Business owner - Coffee & Code",
+    "time": "12 minutes ago",
+    "text": "Really enjoyed this issue. Feeling inspired by the article about publishing 100 articles in 100 days 🔥",
+    "replies": [
       {
-        "id": "86a32" ,
-        "text": "jhvgjhvjhv"
+        "id": "r1",
+        "username": "Lucas Scott",
+        "title": "Full-time parent",
+        "time": "9 minutes ago",
+        "text": "Me too! I was thinking of trying it out with my new newsletter.",
+        "likes": 1
       }
     ]
-
+  },
+  {
+    "id": "c2",
+    "username": "Quinn Hagen",
+    "title": "Founder @ Acme Inc",
+    "time": "4 minutes ago",
+    "text": "Has anyone here taken the newsletter course mentioned in this issue? My team are thinking of trying it out.",
+    "replies": []
+  }
+]
 }
