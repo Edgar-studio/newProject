@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from "axios";
 
 const Comments = () => {
     const [comments, setComments] = useState([]);
@@ -8,15 +9,10 @@ const Comments = () => {
     useEffect(() => {
         const fetchComments = async () => {
             try {
-                const response = await fetch('http://localhost:4000/Comments');
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
-                }
-                const data = await response.json();
-                if (!Array.isArray(data)) {
-                    throw new Error('Expected an array of comments');
-                }
+                const response = await axios.get('http://localhost:4000/Comments');
+                const data = await response.data;
                 setComments(data);
+
             } catch (err) {
                 console.error('Fetch error:', err);
                 setError('Failed to load comments. Please try again later.');
