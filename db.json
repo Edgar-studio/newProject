@@ -23,6 +23,7 @@
   "KarateTutorial": [
     {
       "title": "Punch Basics",
+      "video": "https://www.youtube.com/embed/vkv3OsrPbv4",
       "description": "Learn basic punching techniques",
       "body": "Detailed steps for punching...",
       "id": "1"
@@ -30,18 +31,21 @@
     {
       "id": "2",
       "title": "Kick Techniques",
+      "video": "https://www.youtube.com/embed/SvY-0k7ZGtA",
       "description": "Master intermediate kicks",
       "body": "Detailed steps for kicking...Step-by-step instructions for beginner kata sequences including breathing techniques and proper stancesStep-by-step instructions for beginner kata sequences including breathing techniques and proper stancesStep-by-step instructions for beginner kata sequences including breathing techniques and proper stances"
     },
     {
       "id": "3",
       "title": "Kata Fundamentals",
+      "video": "https://www.youtube.com/embed/xMwj3e4JjEw",
       "description": "Introduction to basic kata patterns",
       "body": "Step-by-step instructions for beginner kata sequences including breathing techniques and proper stances."
     },
     {
       "id": "4",
       "title": "Blocking Techniques",
+      "video": "https://www.youtube.com/embed/q0HPwnnr1ho",
       "description": "Essential defensive blocks for self-protection",
       "body": "Comprehensive guide to high, middle, and low blocks with applications for real-world self-defense scenarios."
     },
@@ -139,6 +143,12 @@
       "text": "sdvbsdvsdvsdv",
       "userName": "Admin",
       "date": "2-6-2025"
+    },
+    {
+      "id": "c5cb",
+      "text": "dsavsdv",
+      "userName": "Admin",
+      "date": "6-6-2025"
     }
   ]
 }

@@ -22,6 +22,12 @@ export default {
         'slide-in-right': 'slide-in-right 0.5s ease-out',
       },
     },
+    screens:{
+      'sm': '300px',
+      'md': '650px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    }
   },
   plugins: [],
 };

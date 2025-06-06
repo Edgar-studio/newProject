@@ -66,16 +66,20 @@ const UsersControl = () => {
     };
 
     return !modalIsActive ? (
-        <div className="p-6 w-full min-h-full mx-auto flex justify-between flex-col gap-4 bg-gradient-to-bl from-blue-600 via-white to-black dark:from-blue-900 dark:via-gray-900 dark:to-black">
+        <div className="p-6 w-full min-h-full mx-auto flex justify-between
+        flex-col gap-4 bg-gradient-to-bl border-4 border-amber-300
+        from-blue-600 via-white to-black dark:from-blue-900
+        dark:via-gray-900 dark:to-black">
             <h2 className="text-2xl font-bold mb-6 text-black dark:text-white">Users Control</h2>
             <div className="space-y-4">
                 {users.map(user => (
                     <div
                         key={user.id}
-                        className="p-4 bg-white dark:bg-gray-800 shadow rounded flex justify-between items-center text-black dark:text-white"
+                        className="p-4 bg-white dark:bg-gray-800 shadow sm:w-[99%] sm:gap-4
+                        rounded flex sm:flex-col md:flex-row justify-between items-center text-black dark:text-white"
                     >
                         {editingUserId === user.id ? (
-                            <div className="flex gap-4">
+                            <div className="flex gap-4 sm:flex-col">
                                 <input
                                     type="text"
                                     name="username"

@@ -17,7 +17,8 @@ const AdminModal = () => {
     return (
         <div>
             {token === "isAdmin" && <button
-                className='p-2 text-[18px] font-bold border-0 text-white '
+                className='w-full bg-blue-500 hover:bg-blue-600 text-white
+                                px-3 py-1 rounded text-sm'
 
                 onClick={()=>{
                     localStorage.setItem("token", 'Admin');
@@ -28,7 +29,8 @@ const AdminModal = () => {
             </button>}
 
             {token === "Admin" && !isOpen ? <button
-                className='text-white border-0 '
+                className=' border-0 w-full bg-blue-500 hover:bg-blue-600 text-white
+                                px-3 py-1 rounded text-sm'
 
                 onClick={()=>{
                     setIsOpen(!isOpen);
@@ -37,6 +39,8 @@ const AdminModal = () => {
                 Admin Page
             </button> :  token !== "isAdmin" && <form
                 onSubmit={handleSubmit(handleAdminLogin)}
+                className="w-full bg-blue-500 hover:bg-blue-600 text-white
+                                px-3 py-1 rounded text-sm"
                 // className='bg-cyan-600 text-black text-2xl
                 //      w-1/3 h-1/3 flex items-center justify-center flex-col gap-4'
             >

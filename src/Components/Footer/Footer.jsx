@@ -1,11 +1,13 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import {useTranslation} from 'react-i18next';
 
 const Footer = () => {
-    const { t } = useTranslation();
+    const {t} = useTranslation();
     return (
-        <footer className="w-full bg-red-600 text-white px-6 py-1  h-[15vh]">
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+        <footer className="w-full bg-red-600 text-white px-6 py-1  h-[15vh] sm:bg-blue-400
+         sm:h-auto ">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 text-sm
+            sm:flex sm:flex-col sm:items-center md:flex-row md:h-[15vh]">
                 <div>
                     <h2 className="text-lg font-semibold mb-2">{t("contact_us")}</h2>
                     <p><a href="mailto:samvel197801@gmail.com">Email: samvel197801@gmail.com</a></p>

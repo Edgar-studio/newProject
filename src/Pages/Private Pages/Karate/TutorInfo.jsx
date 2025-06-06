@@ -20,12 +20,19 @@ const TutorInfo = () => {
     }, []);
 
     return (
+
+        //stylery kargavorel
         <div
-        className='w-full h-screen dark:bg-gray-500 flex flex-col items-center
+            className='w-full h-screen dark:bg-gray-500 flex flex-col items-center
         justify-center p-6 dark:bg-text-white'
         >
             <h1 className='text-4xl'>{tutorial.title}</h1>
+            <iframe width="914" height="514" src={tutorial.video}
 
+                    allow="accelerometer; pause; autoplay; clipboard-write; encrypted-media;
+                    gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen></iframe>
             <p className="text-2xl">{tutorial.description}</p>
             <p className="text-2xl ">{tutorial.body}</p>
         </div>

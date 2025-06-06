@@ -28,7 +28,8 @@ const Menu = () => {
                         <NavLink
                             to={menuElement.path}
                             className={({ isActive }) =>
-                                `relative text-white text-lg px-2 py-1 no-underline transition-colors duration-600 
+                                `relative text-white text-lg px-2 py-1 
+                                no-underline transition-colors duration-600  
                  ${isActive ? 'after:scale-x-100 after:bg-white' : 'after:scale-x-0 after:bg-white'}
                 after:content-[''] after:absolute after:w-full after:h-[2px] after:bottom-0 
                 after:left-0 after:rounded after:transition-transform after:duration-600 

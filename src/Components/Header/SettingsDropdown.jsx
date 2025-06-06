@@ -75,14 +75,13 @@ const SettingsDropdown = () => {
 
                         {/* Admin Modal */}
                         <div className="mb-2">
-                            <button className="w-full bg-blue-500 hover:bg-blue-600 text-white
-                                px-3 py-1 rounded text-sm"><Admin_Modal/></button>
+                            <Admin_Modal/>
                         </div>
 
                         {/* Logout */}
                         <button
                             onClick={handleLogout}
-                            className="w-full bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-sm"
+                            className="w-full bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-sm "
                         >
                             Logout
                         </button>
