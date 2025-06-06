@@ -35,5 +35,21 @@
   "About": "O stránce",
   "Karate Tutorial": "Kurz karate",
   "Contact": "Kontakt",
-  "termsOfService": "Podmínky služby"
+  "termsOfService": "Podmínky služby",
+  "Community_Forum": "Společenství",
+  "TypeMessage": "Zde napište svou zprávu",
+  "Privacy_Respect": "Respektujeme vaše soukromí a zavazujeme se chránit vaše osobní údaje.",
+  "NoDataSell": "Vaše data neprodáváme ani nesdílíme.",
+  "StoredInformation": "Vaše informace jsou bezpečně uloženy.",
+  "UserDataDeletion": "Můžete kdykoli požádat o smazání svých údajů.",
+  "OnlyNecessaryData": "Sbíráme pouze to, co je nezbytné pro poskytování našich služeb.",
+  "PrivacyContact": "Pro jakékoli otázky týkající se ochrany osobních údajů nás kontaktujte na privacy@example.com.",
+  "terms_of_service": "Podmínky služby",
+  "tos_intro": "Používáním našich služeb souhlasíte s následujícími podmínkami:",
+  "tos_age_requirement": "Musíte být alespoň 13 let, abyste mohli používat tento web.",
+  "tos_no_misuse": "Nezneužívejte naše služby ani obsah.",
+  "tos_updates": "Tyto podmínky můžeme kdykoli aktualizovat s upozorněním.",
+  "tos_no_liability": "Používejte na vlastní riziko. Neodpovídáme za žádné škody.",
+  "tos_contact": "Máte-li jakékoli dotazy, kontaktujte nás na samvel197801@gmail.com."
+
 }

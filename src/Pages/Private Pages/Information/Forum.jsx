@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { IoSend } from "react-icons/io5";
 import useForums from "../../../Utils/useForums.jsx";
+import {useTranslation} from "react-i18next";
 
 const Forum = () => {
     const [forums, setForums] = useState([]);
     const [message, setMessage] = useState("");
     const { fetchForum, sendMessage } = useForums();
+    const { t } = useTranslation();
 
     const token = localStorage.getItem("token");
 
@@ -44,9 +46,9 @@ const Forum = () => {
     };
 
     return (
-        <div className="bg-gradient-to-br from-purple-500 via-blue-500 to-indigo-600 w-screen min-h-screen flex justify-center items-center">
+        <div className="bg-gradient-to-br from-purple-500 via-blue-500 to-indigo-600 w-screen min-h-screen flex justify-center items-center ">
             <div className="flex flex-col items-center gap-4 p-6 bg-white/20 backdrop-blur-md w-[90%] md:w-2/3 lg:w-1/2 h-[80vh] rounded-2xl shadow-2xl border border-white/30">
-                <h1 className="text-4xl md:text-5xl text-white font-extrabold drop-shadow-lg">Community Forum</h1>
+                <h1 className="text-4xl md:text-5xl text-white font-extrabold drop-shadow-lg">{t("Community_Forum")}</h1>
 
                 <div className="w-full overflow-y-auto bg-white rounded-xl p-4 flex-1 shadow-inner">
                     {forums.length === 0 ? (
@@ -54,8 +56,8 @@ const Forum = () => {
                     ) : (
                         forums.map((forum) => (
                             <div key={forum.id} className="mb-3 p-3 rounded-lg bg-gray-100">
-                                <p className="text-gray-800">{forum.text}</p>
-                                <p className="text-sm text-gray-500 mt-1">
+                                <p className="dark:text-gray-800">{forum.text}</p>
+                                <p className="text-sm dark:text-gray-500 mt-1">
                                     <strong>{forum.userName}</strong> • {forum.date}
                                 </p>
                             </div>
@@ -69,7 +71,7 @@ const Forum = () => {
                         onChange={(e) => setMessage(e.target.value)}
                         className="flex-1 p-3 rounded-xl bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
                         type="text"
-                        placeholder="Type your message..."
+                        placeholder={t("TypeMessage")}
                     />
                     <button
                         onClick={addMessage}

@@ -35,5 +35,20 @@
   "About": "About",
   "Karate Tutorial": "Karate Tutorial",
   "Contact": "Contact",
-  "termsOfService": "Terms Of Service"
+  "termsOfService": "Terms Of Service",
+  "Community_Forum": "Community Forum",
+  "TypeMessage": "Type Your Message Here",
+  "Privacy_Respect": "We respect your privacy and are committed to protecting your personal information.",
+  "NoDataSell": "We do not sell or share your data.",
+  "StoredInformation": "Your information is stored securely.",
+  "UserDataDeletion": "You can request deletion of your data at any time.",
+  "OnlyNecessaryData": "We only collect what is necessary to provide our services.",
+  "PrivacyContact": "For any privacy-related concerns, contact us at privacy@example.com.",
+  "terms_of_service": "Terms of Service",
+  "tos_intro": "By using our services, you agree to the following terms:",
+  "tos_age_requirement": "You must be at least 13 years old to use this website.",
+  "tos_no_misuse": "Do not misuse our services or content.",
+  "tos_updates": "We may update these terms at any time with notice.",
+  "tos_no_liability": "Use at your own risk. We are not liable for any damages.",
+  "tos_contact": "If you have any questions, contact us at samvel197801@gmail.com."
 }
