@@ -22,56 +22,60 @@
   ],
   "KarateTutorial": [
     {
-      "title": "Punch Basics",
-      "video": "https://www.youtube.com/embed/vkv3OsrPbv4",
-      "description": "Learn basic punching techniques",
-      "body": "Detailed steps for punching...",
-      "id": "1"
+      "id": "1",
+      "title": "Punch Basics ",
+      "video": "https://www.youtube.com/embed/B7ChTe6hyc",
+      "description": "Quick guide to executing a strong basic karate punch",
+      "body": "Detailed steps for punching..."
     },
     {
       "id": "2",
       "title": "Kick Techniques",
-      "video": "https://www.youtube.com/embed/SvY-0k7ZGtA",
-      "description": "Master intermediate kicks",
-      "body": "Detailed steps for kicking...Step-by-step instructions for beginner kata sequences including breathing techniques and proper stancesStep-by-step instructions for beginner kata sequences including breathing techniques and proper stancesStep-by-step instructions for beginner kata sequences including breathing techniques and proper stances"
+      "video": "https://www.youtube.com/embed/6mnJbfdXriI",
+      "description": "Essential kick tutorial with proper form demonstration",
+      "body": "Detailed steps for kicking..."
     },
     {
       "id": "3",
       "title": "Kata Fundamentals",
-      "video": "https://www.youtube.com/embed/xMwj3e4JjEw",
+      "video": "https://www.youtube.com/embed/ap8M24mkVnk",
       "description": "Introduction to basic kata patterns",
       "body": "Step-by-step instructions for beginner kata sequences including breathing techniques and proper stances."
     },
     {
       "id": "4",
       "title": "Blocking Techniques",
-      "video": "https://www.youtube.com/embed/q0HPwnnr1ho",
+      "video": "https://www.youtube.com/embed/fsirFqyxqq0",
       "description": "Essential defensive blocks for self-protection",
-      "body": "Comprehensive guide to high, middle, and low blocks with applications for real-world self-defense scenarios."
+      "body": "Comprehensive guide to high, middle, and low blocks with applications for real‑world self‑defense scenarios."
     },
     {
       "id": "5",
       "title": "Stances and Footwork",
-      "description": "Foundation of movement in karate",
+      "video": "https://www.youtube.com/embed/l3ibRxdBYvI",
+      "description": "Quick demo of stances and weight shifts",
       "body": "Detailed breakdown of front stance, back stance, horse stance, and cat stance with proper weight distribution and alignment principles."
     },
     {
       "id": "6",
       "title": "Sparring Strategies",
-      "description": "Tactical approaches for kumite practice",
+      "video": "https://www.youtube.com/embed/qXQ2G-CT-cc",
+      "description": "Tactical sparring technique highlight",
       "body": "Advanced concepts for point sparring, including distance management, timing, counterattacking, and competition tactics."
     },
     {
       "id": "7",
       "title": "Belt Examination Preparation",
-      "description": "Requirements and training plan for belt advancement",
+      "video": "https://www.youtube.com/embed/skQ-mAsinSc",
+      "description": "High‑kick highlight for belt grading prep",
       "body": "Systematic training program covering technical requirements, physical conditioning, and mental preparation for successful belt examinations."
     },
     {
       "id": "86a3",
-      "title": "sdgsd",
-      "description": "sdfsdfsdfwesdgvfsd",
-      "body": "Detailed steps for kicking...Step-by-step instructions for beginner kata sequences including breathing techniques and proper stancesStep-by-step instructions for beginner kata sequences including breathing techniques and proper stancesStep-by-step instructions for beginner kata sequences including breathing techniques and proper stances"
+      "title": "Advanced Kata Review",
+      "video": "https://www.youtube.com/embed/w3rAAollFm8",
+      "description": "In‑depth breakdown of advanced kata flow",
+      "body": "Detailed steps for advanced kata, with breathing control, rhythm, transitions, and stance corrections to ensure proper performance."
     }
   ],
   "Comments": [
