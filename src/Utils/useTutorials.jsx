@@ -48,11 +48,34 @@ const UseTutorials = () => {
         }
     };
 
+    const addComment = async (commentInfo) => {
+        try{
+            await axios.post("http://localhost:4000/Comments", commentInfo);
+        } catch(error) {
+            console.error("Failed to send comment:", error);
+            notify("Failed to send comment:", error);
+            throw error;
+        }
+    }
+
+    const getComment = async () => {
+        try{
+            await axios.get("http://localhost:4000/Comments");
+        } catch(error) {
+            console.error("Failed to send comment:", error);
+            notify("Failed to send comment:", error);
+            throw error;
+        }
+    }
+
+
     return {
         fetchTutorials,
         addTutorial,
         editTutorial,
         deleteTutorial,
+        addComment,
+        getComment,
     };
 };
 

@@ -8,6 +8,7 @@ import Admin_Modal from "./Admin_Modal.jsx"; // path to your i18n instance
 const SettingsDropdown = () => {
     const [isOpen, setIsOpen] = useState(false);
     const { theme, toggleTheme } = useTheme();
+    const token = localStorage.getItem("token");
 
     const changeLanguage = (lang) => {
         i18n.changeLanguage(lang);
@@ -74,9 +75,16 @@ const SettingsDropdown = () => {
                         </div>
 
                         {/* Admin Modal */}
-                        <div className="mb-2">
-                            <Admin_Modal/>
-                        </div>
+                        {token === "isAdmin" ? (
+                            <div className="mb-2">
+                                <Admin_Modal/>
+                            </div>
+                        ) :  token === "Admin" && (
+                            <div className="mb-2">
+                                <Admin_Modal/>
+                            </div>
+                        )}
+
 
                         {/* Logout */}
                         <button

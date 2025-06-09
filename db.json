@@ -24,7 +24,7 @@
     {
       "id": "1",
       "title": "Punch Basics ",
-      "video": "https://www.youtube.com/embed/B7ChTe6hyc",
+      "video": "https://www.youtube.com/embed/T6w6nf4_05A",
       "description": "Quick guide to executing a strong basic karate punch",
       "body": "Detailed steps for punching..."
     },
@@ -80,29 +80,11 @@
   ],
   "Comments": [
     {
-      "id": "c1",
-      "username": "Darlene Peterson",
-      "title": "Business owner - Coffee & Code",
-      "time": "12 minutes ago",
-      "text": "Really enjoyed this issue. Feeling inspired by the article about publishing 100 articles in 100 days 🔥",
-      "replies": [
-        {
-          "id": "r1",
-          "username": "Lucas Scott",
-          "title": "Full-time parent",
-          "time": "9 minutes ago",
-          "text": "Me too! I was thinking of trying it out with my new newsletter.",
-          "likes": 1
-        }
-      ]
-    },
-    {
-      "id": "c2",
-      "username": "Quinn Hagen",
-      "title": "Founder @ Acme Inc",
-      "time": "4 minutes ago",
-      "text": "Has anyone here taken the newsletter course mentioned in this issue? My team are thinking of trying it out.",
-      "replies": []
+      "id": "78ce",
+      "commentText": "asas",
+      "userName": "Admin",
+      "date": "9-6-2025",
+      "tutorialId": "1"
     }
   ],
   "Forums": [

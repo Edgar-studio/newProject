@@ -4,10 +4,12 @@ import useTutorials from "../../../Utils/useTutorials.jsx";
 
 const TutorInfo = () => {
     const [tutorial, setTutorial] = useState(null);
+    const [commentText, setCommentText] = useState("");
+    const [commentQuery, setCommentQuery] = useState("");
     const params = useParams();
 
-    const { fetchTutorials } = useTutorials();
-
+    const { fetchTutorials, addComment, getComment } = useTutorials();
+    const token = localStorage.getItem('token');
     useEffect(() => {
         const loadTutorials = async () => {
             const data = await fetchTutorials();
@@ -16,6 +18,8 @@ const TutorInfo = () => {
         };
         loadTutorials();
     }, []);
+
+
 
     if (!tutorial) return <div className="text-center text-white mt-20 text-xl">Loading...</div>;
 
@@ -40,7 +44,58 @@ const TutorInfo = () => {
                 <p className="text-lg text-black leading-relaxed whitespace-pre-line">
                     {tutorial.body}
                 </p>
+                <input
+
+                    onChange={(e) => setCommentText(e.target.value)}
+                    type="text"
+                />
+                <button
+                onClick={async ()=> {
+                    try {
+
+                        const date = new Date();
+                        const dateMDY = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+                        const commentInfo = {
+                            commentText,
+                            userName: token,
+                            date: dateMDY,
+                            tutorialId: tutorial.id,
+                        }
+                      const response = await  addComment(commentInfo);
+                        return response;
+                    }catch(e){
+                        console.error(e);
+                    }
+                }}
+                >Add</button>
             </div>
+            <input
+            onChange={(e) => setCommentQuery(e.target.value)}
+            type="text"
+
+            />
+
+            <button
+            onClick={ async ()=> {
+                try{
+
+                const date = new Date();
+                const dateMDY = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+                const commentInfo = {
+                    commentQuery,
+                    userName: token,
+                    date: dateMDY,
+                    tutorialId: tutorial.id,
+                }
+                    const response = await  getComment(commentInfo);
+                    return response;
+                }catch(e){
+                    console.error(e);
+                }
+            }}
+
+            >Post</button>
+
         </div>
     );
 };
