@@ -28,7 +28,6 @@ const UseTutorials = () => {
     const editTutorial = async (id, tutorialData) => {
         try {
             const response = await axios.put(`http://localhost:4000/KarateTutorial/${id}`, tutorialData);
-            notify("Tutorial updated", "green");
             return response.data;
         } catch (error) {
             console.error("Failed to update tutorial:", error);

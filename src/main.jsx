@@ -14,7 +14,7 @@ createRoot(document.getElementById('root')).render(
       <StrictMode>
           <BrowserRouter>
               <App />
-              <ToastContainer />
+              <ToastContainer limit={2}/>
           </BrowserRouter>
       </StrictMode>
     </ThemeProvider>,

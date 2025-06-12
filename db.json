@@ -33,7 +33,12 @@
       "title": "Kick Techniques",
       "video": "https://www.youtube.com/embed/6mnJbfdXriI",
       "description": "Essential kick tutorial with proper form demonstration",
-      "body": "Detailed steps for kicking..."
+      "body": "Detailed steps for kicking...",
+      "likes": [
+        "Tom",
+        "Admin"
+      ],
+      "dislikes": []
     },
     {
       "id": "3",
@@ -101,38 +106,38 @@
       "tutorialId": "1"
     },
     {
-      "id": "c318",
-      "commentText": "asdvs",
+      "id": "4909",
+      "commentText": "asfvsa",
       "userName": "Admin",
-      "date": "12-6-2025",
+      "date": "12/06/2025",
       "tutorialId": "2"
     },
     {
-      "id": "6ef6",
-      "commentText": "asvsav",
+      "id": "df15",
+      "commentText": "asvas",
       "userName": "Admin",
-      "date": "12-6-2025",
+      "date": "12/06/2025",
       "tutorialId": "2"
     },
     {
-      "id": "051d",
-      "commentText": "asvasvas",
-      "userName": "Admin",
-      "date": "12-6-2025",
-      "tutorialId": "2"
-    },
-    {
-      "id": "da29",
-      "commentText": "asvasvas",
-      "userName": "Admin",
-      "date": "12-6-2025",
-      "tutorialId": "2"
-    },
-    {
-      "id": "52ee",
+      "id": "9f07",
       "commentText": "asvasv",
       "userName": "Admin",
-      "date": "12-6-2025",
+      "date": "12/06/2025",
+      "tutorialId": "2"
+    },
+    {
+      "id": "7032",
+      "commentText": "zsavxz",
+      "userName": "Tom",
+      "date": "12/06/2025",
+      "tutorialId": "2"
+    },
+    {
+      "id": "7742",
+      "commentText": "ascvascvasc",
+      "userName": "Tom",
+      "date": "12/06/2025",
       "tutorialId": "2"
     }
   ],
