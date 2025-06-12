@@ -5,21 +5,48 @@ import useTutorials from "../../../Utils/useTutorials.jsx";
 const TutorInfo = () => {
     const [tutorial, setTutorial] = useState(null);
     const [commentText, setCommentText] = useState("");
-    const [commentQuery, setCommentQuery] = useState("");
+    const [comments, setComments] = useState([]);
     const params = useParams();
 
     const { fetchTutorials, addComment, getComment } = useTutorials();
     const token = localStorage.getItem('token');
+
     useEffect(() => {
-        const loadTutorials = async () => {
-            const data = await fetchTutorials();
-            const tutorialInfo = data.find((tutorial) => tutorial.id === params.id);
+        const loadData = async () => {
+            const tutorials = await fetchTutorials();
+            const tutorialInfo = tutorials.find((tut) => tut.id === params.id);
             setTutorial(tutorialInfo);
+
+            const allComments = await getComment();
+            const tutorialComments = allComments.filter(c => c.tutorialId === params.id);
+            setComments(tutorialComments);
         };
-        loadTutorials();
-    }, []);
 
+        loadData();
+    }, [params.id]);
 
+    const handleAddComment = async () => {
+        try {
+            const date = new Date();
+            const dateMDY = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+            const commentInfo = {
+                commentText,
+                userName: token,
+                date: dateMDY,
+                tutorialId: tutorial.id,
+            };
+
+            await addComment(commentInfo);
+
+            const allComments = await getComment();
+            const tutorialComments = allComments.filter(c => c.tutorialId === params.id);
+            setComments(tutorialComments);
+
+            setCommentText("");
+        } catch (e) {
+            console.error(e);
+        }
+    };
 
     if (!tutorial) return <div className="text-center text-white mt-20 text-xl">Loading...</div>;
 
@@ -38,64 +65,39 @@ const TutorInfo = () => {
             </div>
 
             <div className="w-full max-w-4xl space-y-6 px-4">
-                <p className="text-xl text-black font-semibold">
-                    {tutorial.description}
-                </p>
-                <p className="text-lg text-black leading-relaxed whitespace-pre-line">
-                    {tutorial.body}
-                </p>
-                <input
+                <p className="text-xl text-black font-semibold">{tutorial.description}</p>
+                <p className="text-lg text-black leading-relaxed whitespace-pre-line">{tutorial.body}</p>
 
-                    onChange={(e) => setCommentText(e.target.value)}
-                    type="text"
-                />
-                <button
-                onClick={async ()=> {
-                    try {
+                <div className="flex flex-col space-y-2">
+                    <input
+                        value={commentText}
+                        onChange={(e) => setCommentText(e.target.value)}
+                        type="text"
+                        className="p-2 rounded text-black"
+                        placeholder="Write a comment..."
+                    />
+                    <button
+                        onClick={handleAddComment}
+                        className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded"
+                    >
+                        Add Comment
+                    </button>
+                </div>
 
-                        const date = new Date();
-                        const dateMDY = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
-                        const commentInfo = {
-                            commentText,
-                            userName: token,
-                            date: dateMDY,
-                            tutorialId: tutorial.id,
-                        }
-                      const response = await  addComment(commentInfo);
-                        return response;
-                    }catch(e){
-                        console.error(e);
-                    }
-                }}
-                >Add</button>
+                <div className="mt-6">
+                    <h2 className="text-2xl font-bold mb-4">Comments</h2>
+                    {comments.length === 0 ? (
+                        <p className="text-gray-400">No comments yet.</p>
+                    ) : (
+                        comments.map((comment, index) => (
+                            <div key={index} className="bg-white text-black p-4 mb-3 rounded shadow">
+                                <p className="font-semibold">{comment.userName} on {comment.date}</p>
+                                <p>{comment.commentText}</p>
+                            </div>
+                        ))
+                    )}
+                </div>
             </div>
-            <input
-            onChange={(e) => setCommentQuery(e.target.value)}
-            type="text"
-
-            />
-
-            <button
-            onClick={ async ()=> {
-                try{
-
-                const date = new Date();
-                const dateMDY = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
-                const commentInfo = {
-                    commentQuery,
-                    userName: token,
-                    date: dateMDY,
-                    tutorialId: tutorial.id,
-                }
-                    const response = await  getComment(commentInfo);
-                    return response;
-                }catch(e){
-                    console.error(e);
-                }
-            }}
-
-            >Post</button>
-
         </div>
     );
 };

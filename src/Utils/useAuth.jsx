@@ -48,7 +48,6 @@ const UseAuth = () => {
         }
     };
 
-    // ✅ Delete User
     const deleteUser = async (userId) => {
         try {
             await axios.delete(`http://localhost:4000/users/${userId}`);

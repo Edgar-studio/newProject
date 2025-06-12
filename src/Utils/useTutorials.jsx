@@ -59,14 +59,15 @@ const UseTutorials = () => {
     }
 
     const getComment = async () => {
-        try{
-            await axios.get("http://localhost:4000/Comments");
-        } catch(error) {
-            console.error("Failed to send comment:", error);
-            notify("Failed to send comment:", error);
+        try {
+            const response = await axios.get("http://localhost:4000/Comments");
+            return response.data;
+        } catch (error) {
+            console.error("Failed to get comments:", error);
+            notify("Failed to get comments", "red");
             throw error;
         }
-    }
+    };
 
 
     return {
