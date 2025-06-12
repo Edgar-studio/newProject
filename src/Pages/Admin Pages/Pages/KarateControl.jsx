@@ -114,7 +114,7 @@ const KarateControl = () => {
                     >
                         <IoIosCloseCircle size={30} />
                     </button>
-                    <AddTuto rModal
+                    <AddTutorModal
                         initialData={tutorialToEdit}
                         onSave={handleSave}
                         onClose={() => {

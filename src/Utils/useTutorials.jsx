@@ -69,6 +69,17 @@ const UseTutorials = () => {
         }
     };
 
+    const deleteComment = async (id) => {
+        try{
+            const response = await axios.delete(`http://localhost:4000/Comments/${id}`);
+            return response.data;
+        }catch(error) {
+            console.error("Failed to delete comment:", error);
+
+            throw error;
+        }
+    }
+
 
     return {
         fetchTutorials,
@@ -77,6 +88,7 @@ const UseTutorials = () => {
         deleteTutorial,
         addComment,
         getComment,
+        deleteComment,
     };
 };
 

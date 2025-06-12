@@ -8,9 +8,13 @@ const TutorInfo = () => {
     const [comments, setComments] = useState([]);
     const params = useParams();
 
-    const { fetchTutorials, addComment, getComment } = useTutorials();
+    const { fetchTutorials, addComment, getComment, deleteComment } = useTutorials();
     const token = localStorage.getItem('token');
 
+
+    const handleDeleteComment = async (id) => {
+        await deleteComment(id)
+    }
     useEffect(() => {
         const loadData = async () => {
             const tutorials = await fetchTutorials();
@@ -23,7 +27,7 @@ const TutorInfo = () => {
         };
 
         loadData();
-    }, [params.id]);
+    }, [params.id, handleDeleteComment]);
 
     const handleAddComment = async () => {
         try {
@@ -46,7 +50,9 @@ const TutorInfo = () => {
         } catch (e) {
             console.error(e);
         }
+
     };
+
 
     if (!tutorial) return <div className="text-center text-white mt-20 text-xl">Loading...</div>;
 
@@ -93,6 +99,13 @@ const TutorInfo = () => {
                             <div key={index} className="bg-white text-black p-4 mb-3 rounded shadow">
                                 <p className="font-semibold">{comment.userName} on {comment.date}</p>
                                 <p>{comment.commentText}</p>
+                                {token === comment.userName && (
+                                    <button onClick={ ()=>{
+                                        handleDeleteComment(comment.id)
+                                    }}>
+                                        Delete
+                                    </button>
+                                )}
                             </div>
                         ))
                     )}
