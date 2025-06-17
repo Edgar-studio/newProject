@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { useParams } from "react-router-dom";
 import useTutorials from "../../../Utils/useTutorials.jsx";
 import { AiFillDislike, AiFillLike, AiOutlineDislike, AiOutlineLike } from "react-icons/ai";
+import {MdDelete} from "react-icons/md";
 
 const TutorInfo = () => {
     const [tutorial, setTutorial] = useState(null);
@@ -197,16 +198,23 @@ const TutorInfo = () => {
                                 key={comment.id}
                                 className="bg-white dark:bg-gray-800 text-black dark:text-white p-4 mb-3 rounded shadow"
                             >
-                                <p className="font-semibold">{comment.userName} <span className="text-sm text-gray-500">on {comment.date}</span></p>
+                                <p className="font-semibold flex justify-between">
+                                    <span className='flex gap-2 '>{comment.userName}
+                                        <span className="text-sm text-gray-500">on {comment.date}</span>
+
+
+                                    </span>
+                                    {(token === comment.userName || token === "Admin") && (
+
+                                        <MdDelete
+                                            size={25}
+                                            onClick={() => handleDeleteComment(comment.id)}
+                                            className="text-red-600 hover:underline text-sm mt-1 cursor-pointer"/>
+
+                                    )}
+                                </p>
                                 <p>{comment.commentText}</p>
-                                {(token === comment.userName || token === "Admin") && (
-                                    <button
-                                        onClick={() => handleDeleteComment(comment.id)}
-                                        className="text-red-600 hover:underline text-sm mt-1"
-                                    >
-                                        Delete
-                                    </button>
-                                )}
+
                             </div>
                         ))
                     )}
